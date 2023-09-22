@@ -17,9 +17,9 @@ const setupAndStartServer = () => {
 
         app.use('/api', apiRoutes);
 
-        if(process.env.DB_SYNC === 'true') {
-            db.sequelize.sync({alter: true})
-        }
+        // if(process.env.DB_SYNC === 'true') {
+        //     db.sequelize.sync({alter: true})
+        // }
 
 
         console.log(`Server running on port ${PORT}`);

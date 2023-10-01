@@ -15,8 +15,13 @@ const setupAndStartServer = () => {
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
 
+        // app.get('/bookingservice/api/v1/home', (req, res) => {
+        //     return res.json({
+        //         message: 'Hitting Booking Service'
+        //     })
+        // });
 
-        app.use('/api', apiRoutes);
+        app.use('/bookingservice/api', apiRoutes);
 
         // if(process.env.DB_SYNC === 'true') {
         //     db.sequelize.sync({alter: true})

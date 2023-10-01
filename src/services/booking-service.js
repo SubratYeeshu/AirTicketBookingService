@@ -31,6 +31,9 @@ class BookingService {
             
             await axios.patch(updateFlightRequestURL, { totalSeats: flightData.totalSeats - booking.noOfSeats });
             const finalBooking = await this.bookingRepository.update(booking.id, { status: "Booked" });
+
+            // generate message after successful booking and send to queue
+            
             return finalBooking;
         } catch (error) {
             console.log(error);
@@ -41,5 +44,6 @@ class BookingService {
         }
     }
 }
+
 
 module.exports = BookingService;
